@@ -4,7 +4,43 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <h5 class="text-center" >Location Information</h5>
+    <div class="card">
+        <p>Location: </p>
+        <p>Logitude: </p>
+        <p>Latitude: </p>
+        <p>Wind speed: </p>
+    </div>
+</div>
+
+<div>
+    <h5 class="text-center">Hobor Status</h5>
+    <div class="card">
+        <p>Status: Occupied</p>
+    </div>
+</div>
+
+@*Please disable this form/inputs if status id occupied*@
+<div>
+    <h5 class="text-center">Board Information</h5>
+    <div class="card">
+        @*Select boat type using dropdown arrow*@
+        
+        <!-- Example single danger button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" >
+                Action
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+
+    </div>
 </div>
