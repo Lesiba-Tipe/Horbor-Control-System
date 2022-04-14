@@ -4,43 +4,56 @@
     ViewData["Title"] = "Home page";
 }
 
-<div>
-    <h5 class="text-center" >Location Information</h5>
-    <div class="card">
+
+
+    <div class="card temp">
+        <h5 class="text-center" >Location Information</h5>
         <p>Location: </p>
         <p>Logitude: </p>
         <p>Latitude: </p>
         <p>Wind speed: </p>
     </div>
-</div>
 
-<div>
-    <h5 class="text-center">Hobor Status</h5>
+
+
     <div class="card">
+        <h5 class="text-center">Hobor Status</h5>
         <p>Status: Occupied</p>
     </div>
-</div>
+
 
 @*Please disable this form/inputs if status id occupied*@
-<div>
-    <h5 class="text-center">Board Information</h5>
-    <div class="card">
-        @*Select boat type using dropdown arrow*@
-        
-        <!-- Example single danger button -->
-        <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" >
-                Action
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-        </div>
 
+    <div class="card">
+        <h5 class="text-center">Board Information</h5>
+        @*Select boat type using dropdown arrow*@
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Select board type
+            </button>
+            <div class="dropdown-menu">
+                @{
+                    //var boardTypes = new List<string>() { "Speed board", "Cargo ship", "Sailboard" };
+
+                    foreach (var boardType in Model._boardList)
+                    {
+                        <a class="dropdown-item" href="#">@boardType</a>
+                    }
+                }
+            </div>
+        </div>
+        <p>Location: </p>
+        <p>Logitude: </p>
 
     </div>
-</div>
+
+
+@*Output*@
+
+    <div class="card">
+        <h5 class="text-center">Action</h5>
+        <p>Location: </p>
+        <p>Logitude: </p>
+    </div>
+

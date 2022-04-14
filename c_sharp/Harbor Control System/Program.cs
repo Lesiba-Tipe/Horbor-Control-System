@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Harbor_Control_System.Services;
 
 namespace Harbor_Control_System
 {
@@ -14,6 +15,7 @@ namespace Harbor_Control_System
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+         
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
