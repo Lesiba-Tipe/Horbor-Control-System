@@ -30,7 +30,6 @@ namespace Harbor_Control_System.Services
 
         public class Forecast
         {
-            public int dt;
             public byte humadity;
             public float pressure;
             public float wind_speed;

@@ -72,10 +72,8 @@ body {
 
 
 /*Custom*/
-.temp {
-    /*display: flex;
-    flex-direction: row;*/
-    background-color:aquamarine;
-    margin-bottom: 60px;
+.go{
+    background-color:burlywood;
+    padding-left: 0px
 }
 

@@ -6,12 +6,12 @@
 
 
 
-    <div class="card temp">
+    <div class="card go">
         <h5 class="text-center" >Location Information</h5>
-        <p>Location: </p>
-        <p>Logitude: </p>
-        <p>Latitude: </p>
-        <p>Wind speed: </p>
+        <p>Location: @Model._weather.City.Name </p>
+        <p>Logitude: @Model._weather.City.Coordinates.Longitude </p>
+        <p>Latitude:  @Model._weather.City.Coordinates.Latitude </p>
+        <p>Wind speed: @Model._weather.Forecast[0].WindSpeed </p>
     </div>
 
 
@@ -24,7 +24,7 @@
 
 @*Please disable this form/inputs if status id occupied*@
 
-    <div class="card">
+    <div class="card ">
         <h5 class="text-center">Board Information</h5>
         @*Select boat type using dropdown arrow*@
 
@@ -44,7 +44,7 @@
             </div>
         </div>
         <p>Location: </p>
-        <p>Logitude: </p>
+        <p>Longitude: </p>
 
     </div>
 

@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Harbor_Control_System.Services;
+using Harbor_Control_System.Entity;
 
 namespace Harbor_Control_System.Controllers
 {
     public class WeatherController : Controller
     {
-        //private WeatherService _weatherService = new WeatherService();
-
         public WeatherController()
         {
-            //Initialize Weather
-
+            Weather = WeatherService.GetWeather().Result;
         }
+
+        public Weather Weather { get; }
 
     }
 }
