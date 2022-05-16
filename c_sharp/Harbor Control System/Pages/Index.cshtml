@@ -4,56 +4,76 @@
     ViewData["Title"] = "Home page";
 }
 
+<div class="card">
+    <h5 class="text-center">Location 4  66 Information</h5>
+    @*<p>Location: @Model._weather.City.Name </p>
+    <p>Logitude: @Model._weather.City.Coordinates.Longitude </p>
+    <p>Latitude:  @Model._weather.City.Coordinates.Latitude </p>
+    <p>Wind speed: @Model._weather.Forecast[0].WindSpeed </p>*@
+</div>
 
 
-    <div class="card go">
-        <h5 class="text-center" >Location Information</h5>
-        <p>Location: @Model._weather.City.Name </p>
-        <p>Logitude: @Model._weather.City.Coordinates.Longitude </p>
-        <p>Latitude:  @Model._weather.City.Coordinates.Latitude </p>
-        <p>Wind speed: @Model._weather.Forecast[0].WindSpeed </p>
-    </div>
+<div class="card">
+    <h5 class="text-center">Hobor Status</h5>
+    <p>Status: @Model._currentStatus</p>
+</div>
 
 
 
-    <div class="card">
-        <h5 class="text-center">Hobor Status</h5>
-        <p>Status: Occupied</p>
-    </div>
+@*@Html.DropDownList("BoatName", new SelectList(Model._boardList), "Select board type", new { @class = "form-control" });
+    <button type="Submit" class="btn btn-success submit">Send</button>*@
+
+<div>
+    @using (Html.BeginForm("SelectedBoat", "Boat", FormMethod.Post))
+    {
+        @Html.DropDownListFor(b => b.BoatType, new SelectList(Model._boatTypeList), "Select new", new { @class = "form-control dropdown" });
+        <input type="submit"/>
+    }
+    end div
+</div>
+    <br />
+    <p>
+        viewbg is: @ViewBag.lesiba;
+    </p>
+    @*Please disable this form/inputs if status id occupied*@
+
+    @{
+        var status = "Not Occupiead";// Model._currentStatus;
+        if (status == "Not Occupied")
+        {
+            <div>
+                <div class="card ">
+                    <h5 class="text-center">Boat Information</h5>
+                    @*Select boat type using dropdown arrow*@
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Select board type</button>
+                        <div class="dropdown-menu">
+                            @{
+
+                                foreach (var boardType in Model._boatTypeList)
+                                {
+                                    <a class="dropdown-item" href="">@boardType</a>
+                                }
+
+                            }
+                        </div>
+
+                    </div>
 
 
-@*Please disable this form/inputs if status id occupied*@
+                </div>
 
-    <div class="card ">
-        <h5 class="text-center">Board Information</h5>
-        @*Select boat type using dropdown arrow*@
 
-        <div class="btn-group">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                Select board type
-            </button>
-            <div class="dropdown-menu">
-                @{
-                    //var boardTypes = new List<string>() { "Speed board", "Cargo ship", "Sailboard" };
+                @*Output*@
 
-                    foreach (var boardType in Model._boardList)
-                    {
-                        <a class="dropdown-item" href="#">@boardType</a>
-                    }
-                }
+                <div class="card">
+                    <h5 class="text-center">Action</h5>
+                    <p> </p>
+                </div>
             </div>
-        </div>
-        <p>Location: </p>
-        <p>Longitude: </p>
-
-    </div>
+        }
+    }
 
 
-@*Output*@
-
-    <div class="card">
-        <h5 class="text-center">Action</h5>
-        <p>Location: </p>
-        <p>Logitude: </p>
-    </div>
 

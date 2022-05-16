@@ -72,8 +72,15 @@ body {
 
 
 /*Custom*/
-.go{
-    background-color:burlywood;
-    padding-left: 0px
+.card {
+    box-shadow: 0px 6px 6px #888888;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.btn-group{
+    width: auto;
+}
+.dropdown{
+    width:auto;
 }
 

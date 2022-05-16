@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Harbor_Control_System.Entity;
+using Newtonsoft.Json;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Harbor_Control_System.Entity;
-using System.Linq;
 
 namespace Harbor_Control_System.Services
 {
@@ -23,9 +23,11 @@ namespace Harbor_Control_System.Services
                         { "X-RapidAPI-Key", "c51366e702mshbd652685e2218d7p1dfc79jsne74f01ade317" }, //Use Azure vaultKey to store this key
                     },
             };
+
             using (var response = await client.SendAsync(request))
             {
-                response.EnsureSuccessStatusCode();
+
+                //response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
 
                 var weatherApi = JsonConvert.DeserializeObject<WeatherApi>(body);
@@ -72,9 +74,9 @@ namespace Harbor_Control_System.Services
             return null;
         }
 
-            
-        
+
+
     }
 
- 
+
 }

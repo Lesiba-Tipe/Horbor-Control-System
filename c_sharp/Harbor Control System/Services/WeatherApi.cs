@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Harbor_Control_System.Services
 {
@@ -26,8 +23,6 @@ namespace Harbor_Control_System.Services
             }
 
         }
-
-
         public class Forecast
         {
             public byte humadity;

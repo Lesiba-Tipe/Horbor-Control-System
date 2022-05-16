@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Harbor_Control_System.Entity;
+using Harbor_Control_System.Exception_Handling;
 using Harbor_Control_System.Services;
-using Harbor_Control_System.Entity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Harbor_Control_System.Controllers
 {
@@ -8,7 +9,15 @@ namespace Harbor_Control_System.Controllers
     {
         public WeatherController()
         {
-            Weather = WeatherService.GetWeather().Result;
+            try
+            {
+                Weather = WeatherService.GetWeather().Result;
+            }
+            catch (WeatherException)
+            {
+
+                throw new WeatherException("Please check you internet connection");
+            }
         }
 
         public Weather Weather { get; }
