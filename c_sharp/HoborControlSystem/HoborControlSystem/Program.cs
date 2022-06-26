@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Harbor_Control_System
+namespace HoborControlSystem
 {
     public class Program
     {
